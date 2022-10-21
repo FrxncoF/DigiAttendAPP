@@ -1,0 +1,17 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar id="ionic-fondo-toolbar">
+    <ion-title class="ion-text-center">
+      <img src="/assets/img/letrasW.png" class="ionic-img-2">
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-icon (click)="openMenu()" name="list" class="ionic-icon" color="light"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="fondo-content" [fullscreen]="true">
+  <h1>Bienvenido, <span style="color: mediumslateblue;">{{username | async}}</span> 🎃 </h1>
+  <img src="/assets/img/LogoFinalS.png" class="ion-img-logo">
+</ion-content>
+
+

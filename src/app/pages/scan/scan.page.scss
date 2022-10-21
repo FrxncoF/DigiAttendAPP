@@ -1,0 +1,33 @@
+.ibutscan {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    --background: #9f26a8;
+    --border-radius: 10px;
+    margin: 20px;
+    display: grid;
+    justify-content: center;
+    --padding-start: 95px;
+    --padding-end: 95px;
+}
+
+//MODAL CSS
+.p-tittle{
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: green;
+}
+
+.p-content{
+  font-weight: 700;
+}
+
+.icon-check{
+  margin-top: 1rem;
+  font-size: 11rem;
+  color: #541459;
+}
+
+.icon-check2{
+  margin-top: 1rem;
+  font-size: 11rem;
+  color: black;
+}

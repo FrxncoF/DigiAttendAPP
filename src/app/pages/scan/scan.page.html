@@ -1,0 +1,38 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar id="ionic-fondo-toolbar">
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="fondo-content" [fullscreen]="true">
+  <p class="ion-text-center">
+    <ion-icon  class="icon-check2" slot="start" name="scan-outline"></ion-icon>
+  </p>
+  <ion-button (click)="setOpen(true)" expand="full" shape="round" class="ibutscan">
+    Escanear QR
+  </ion-button>
+  <!-- ABRIR MODAL -->
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Escaneo QR</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Confirmar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p class="ion-text-center p-tittle">
+          ¡Perfecto!
+        </p>
+        <p class="p-content">
+          Has quedado presente en la clase de hoy. ¡Ya puedes cerrar esta ventana!
+        </p>
+        <p class="ion-text-center">
+          <ion-icon  class="icon-check" slot="start" name="checkmark-circle"></ion-icon>
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

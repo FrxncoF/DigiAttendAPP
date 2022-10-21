@@ -1,0 +1,7 @@
+{
+  "name": "PruebasDigiAtend",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

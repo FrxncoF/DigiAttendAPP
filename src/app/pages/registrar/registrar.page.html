@@ -1,0 +1,59 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar id="ionic-fondo-toolbar">
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content id="fondo-content" [fullscreen]="true" class="ion-padding">
+  <form [formGroup] = "formularioRegistro" (keyup.enter)="CrearUsuario()">
+    <ion-item>
+      <ion-label position="stacked">Nombre:</ion-label>
+      <ion-input type="text" formControlName="nombree" placeholder="Ingrese su nombre "></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Usuario:</ion-label>
+      <ion-input type="text" formControlName="usuarioo" placeholder="Ingrese su usuario "></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Email:</ion-label>
+      <ion-input type="email" formControlName="emaill" placeholder="Ingrese su correo electronico: "></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Contraseña: </ion-label>
+      <ion-input type="password" formControlName="contraa" placeholder="Ingresa tu contraseña: "></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="stacked">Repetir Contraseña: </ion-label>
+      <ion-input type="password"  formControlName="confirmarcontraa" placeholder="Repite tu contraseña "></ion-input>
+    </ion-item>
+    <ion-button (click)="CrearUsuario()" expand="full" shape="round" class="ibutreg" routerLink="/login">
+      Registrarse
+    </ion-button>
+  </form>
+  
+
+  <!-- ABRIR MODAL -->
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <ion-header>
+        <ion-toolbar>
+          <ion-title>Registro Exitoso</ion-title>
+          <ion-buttons slot="end">
+            <ion-button (click)="setOpen(false)">Confirmar</ion-button>
+          </ion-buttons>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+        <p class="ion-text-center p-tittle">
+          ¡Perfecto!
+        </p>
+        <p class="p-content">
+          Ya te has registrado en nuestro sistema. Te enviaremos un correo de confirmacion en un plazo de 24 horas.
+        </p>
+        <p class="ion-text-center">
+          <ion-icon  class="icon-check" slot="start" name="checkmark-circle"></ion-icon>
+        </p>
+      </ion-content>
+    </ng-template>
+  </ion-modal>
+</ion-content>

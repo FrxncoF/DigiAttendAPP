@@ -1,0 +1,25 @@
+ion-card{
+    border-radius: 1.5rem;
+    --background: #2A0B32;
+}
+
+ion-card-title {
+    font-weight: 1000;
+    color: whitesmoke;
+}
+
+ion-card-content {
+    padding: 0;
+}
+
+img {
+    display: flex;
+    align-items: bottom;
+}
+
+p {
+    font-weight: 600;
+    font-size: 16px;
+    padding: 5%;
+}
+
