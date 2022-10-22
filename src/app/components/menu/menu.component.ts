@@ -8,6 +8,12 @@ interface Lista_Menu{
   icon?: string
 }
 
+interface Lista_Menu_Footer{
+  name: string,
+  ruta: string,
+  icon?: string
+}
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -19,8 +25,13 @@ export class MenuComponent implements OnInit {
     { name: 'Quienes Somos', ruta:'/about', icon: 'rocket-outline'},
     { name: 'Configuracion', ruta:'/config', icon: 'settings-outline'},
     { name: 'Iniciar Sesion', ruta:'/login', icon: 'cloud-upload-outline'}
-
   ]
+
+  public lista_menu_footer: Lista_Menu_Footer[]=[
+    { name: 'Cerrar Sesion', ruta:'/logout', icon: 'log-out-outline'}
+  ]
+
+
   constructor(private router:Router, private menu:MenuController) { }
 
   ngOnInit(){

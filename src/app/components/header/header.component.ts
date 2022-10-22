@@ -8,6 +8,8 @@ import { MenuController } from '@ionic/angular';
 })
 export class HeaderComponent implements OnInit {
 
+  public ingresado = localStorage.getItem('ingresado');
+
   constructor(private menu: MenuController) { }
 
   ngOnInit() {}

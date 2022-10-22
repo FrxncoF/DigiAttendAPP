@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { IngresadoGuard } from './ingresado.guard';
+import { NoIngresadoGuard } from './no-ingresado.guard';
 
 const routes: Routes = [
   {
@@ -9,27 +11,38 @@ const routes: Routes = [
   },
   {
     path: 'inicio',
-    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule)
+    loadChildren: () => import('./pages/inicio/inicio.module').then( m => m.InicioPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'scan',
-    loadChildren: () => import('./pages/scan/scan.module').then( m => m.ScanPageModule)
+    loadChildren: () => import('./pages/scan/scan.module').then( m => m.ScanPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule),
+    canActivate: [NoIngresadoGuard]
   },
   {
     path: 'about',
-    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule)
+    loadChildren: () => import('./pages/about/about.module').then( m => m.AboutPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'config',
-    loadChildren: () => import('./pages/config/config.module').then( m => m.ConfigPageModule)
+    loadChildren: () => import('./pages/config/config.module').then( m => m.ConfigPageModule),
+    canActivate: [IngresadoGuard]
   },
   {
     path: 'registrar',
-    loadChildren: () => import('./pages/registrar/registrar.module').then( m => m.RegistrarPageModule)
+    loadChildren: () => import('./pages/registrar/registrar.module').then( m => m.RegistrarPageModule),
+    canActivate: [NoIngresadoGuard]
+  },
+  {
+    path: 'logout',
+    loadChildren: () => import('./pages/logout/logout.module').then( m => m.LogoutPageModule),
+    canActivate: [IngresadoGuard]
   },
 ];
 

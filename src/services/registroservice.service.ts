@@ -53,4 +53,9 @@ export class RegistroserviceService {
   async getUser(): Promise<string> {
     return this.storage.get('username');
   }
+
+  async delUser(){
+    localStorage.setItem('ingresado', 'false');
+    return this.storage.set('username', null);
+  }
 }
